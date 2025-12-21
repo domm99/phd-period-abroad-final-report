@@ -1,0 +1,171 @@
+\documentclass[12pt]{article}
+\usepackage{mgates-letter}
+\definecolor{dark_blue} {rgb}{0., 0., 0.65}
+
+\usepackage{textcomp}
+\usepackage{mathrsfs}  % mathscr font
+\usepackage{boxedminipage}
+\usepackage{rotating}
+\usepackage[inline]{enumitem}
+%\usepackage{natbib}
+\usepackage{xcolor}
+\usepackage[colorlinks, filecolor=dark_blue, urlcolor=dark_blue, linkcolor=black, citecolor=black]{hyperref}
+
+\newcommand{\todoinline}[1]{{\color{violet} #1}}
+
+\begin{document}
+
+\begin{titlepage}
+
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+	\center
+	
+	\textsc{\Large Ph.D. Programme in Computer Science And Engineering}\\[0.5cm]
+	
+	\textsc{\Large XXXIX Cycle}\\[0.6cm]
+	
+	\hrule width \hsize \kern 1mm \hrule width \hsize height 2pt 
+	\vspace{0.8cm}
+	{ \large \bfseries Ph.D. Period Abroad Proposal for Marco Polo}\\[0.6cm]
+	{ \large Transfer Learning and Coordination Techniques for Distributed Collective Intelligence }\\[0.6cm]
+
+	\bfseries{June, 2025}
+
+
+    \vspace{1.5cm}
+    
+    \noindent
+    \begin{minipage}[t]{0.3\textwidth}
+        \raggedright
+        \textbf{Supervisors:}\\[0.5cm]
+        Prof. Mirko Viroli\\
+        Prof. Danilo Pianini\\
+        Prof. Matteo Ferrara
+    \end{minipage}%
+	\hfill
+    \begin{minipage}[t]{0.3\textwidth}
+        \centering
+        \textbf{Abroad Supervisor:}\\[0.5cm]
+        Ivana Dusparic 
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.3\textwidth}
+        \raggedleft
+        \textbf{PhD Candidate:}\\[0.5cm]
+        Davide Domini
+    \end{minipage} \\[0.6cm]
+
+	\hrule width \hsize height 2pt \kern 1mm \hrule width \hsize height 1pt
+	\vspace{0.4cm}
+
+\end{titlepage}
+
+\section{Proposal}\label{sec:intro}
+
+\paragraph{Context.}
+Computing devices have become ubiquitous in everyday life.
+%
+This trend has paved the way for research fields aimed at exploiting
+ the potential of device collectives to build next-generation systems, 
+ including: collective computing~\cite{DBLP:journals/computer/Abowd16}
+ and Collective Adaptive Systems (CAS)~\cite{DBLP:journals/sttt/WirsingJN23,robyphdthesis}.
+%
+More in detail, following Mitchell's definition~\cite{DBLP:conf/metacognition/Mitchell05}, 
+ we refer to CAS as distributed systems comprising multiple agents 
+ such that each agent:
+ \begin{enumerate*}[label=(\roman*)]
+	\item can interact with other agents either directly or indirectly;
+	\item does not individually posses system-wide knowledge;
+	\item can exhibit learning to expand its personal knowledge; and
+	\item can make decisions based on collective or aggregated knowledge from some of its peers.
+ \end{enumerate*}
+%
+Notably, we focus on systems involving a large number of agents -- potentially in the hundreds
+ or thousands -- which is commonly referred to in the literature 
+ as many-agents~\cite{DBLP:phd/ethos/Yang21a}.
+
+In this proposal, we focus on a particularly challenging problem within CAS: 
+ enabling scalable decentralized machine learning across a large number of agents. 
+% 
+A key issue in this setting is how to reuse knowledge across agents operating in 
+ heterogeneous and dynamic environments. 
+% 
+This motivates the exploration of transfer learning as a core strategy, 
+ allowing agents to benefit from others' experiences while reducing redundant 
+ learning and improving overall convergence.
+
+\paragraph{Opportunities and challenges.}
+These systems enable the development of innovative applications in a wide range of real-world domains, such as: 
+ smart cities~\cite{DBLP:conf/icse/IftikharRBW017}, 
+ traffic control~\cite{DBLP:journals/tits/ChuWCL20,DBLP:books/sp/Muller2011/ProthmannTBHMS11} 
+ with autonomous vehicles~\cite{DBLP:journals/corr/BojarskiTDFFGJM16}, 
+ coordinated robot swarms for search and rescue~\cite{DBLP:journals/ijon/ZhouLLXS21} 
+ or environmental monitoring~\cite{DBLP:conf/acsos/AguzziVE23}, and many more.
+%
+Nevertheless, while these systems have significant potential, their engineering 
+ presents several challenges.
+%
+First and foremost, control and decision-making demand particular attention.
+%
+Achieving an optimal balance between centralized and decentralized control is crucial, 
+ as neither extreme is feasible nor desirable~\cite{DBLP:conf/coordination/CasadeiPVN19,DBLP:journals/tits/ChuWCL20,DBLP:journals/jair/LyuBXDA23} 
+ in many dynamic systems. 
+% 
+Indeed, excessive centralization may lead to bottlenecks and single points of failure, 
+ whereas complete decentralization can hinder coordination and consistency.
+%
+Additionally, the dynamic nature of these systems, characterized by constant 
+ environmental changes, mobility, and potential component failures, requires adaptive 
+ learning mechanisms capable of responding swiftly 
+ to evolving conditions~\cite{DBLP:journals/swarm/PrasetyoMF19}.
+%
+Another key consideration is the locality principle, where operational efficiency and cost 
+ are heavily influenced by the spatial proximity of data sources, processing units, and users.
+%
+Furthermore, partial observability introduces uncertainty, as individual components may have 
+ limited or incomplete information about the global state, complicating accurate 
+ decision-making~\cite{DBLP:conf/uai/HeDB22}.
+
+Transfer learning could provide a principled way to share and reuse knowledge while respecting 
+ local constraints. 
+%
+This opens up research questions around how to coordinate learning, 
+ when and what to transfer, and how to ensure stability and efficiency in dynamic 
+ multi-agent systems.
+
+\paragraph{Research Gap.}
+Despite significant progress in the field of cooperative learning within CAS, 
+ several challenges remain open, indicating substantial research gaps.
+%
+Learning in environments with a high number of agents is often unstable and challenging to manage. 
+%
+Centralized learning architectures are frequently impractical, primarily due to privacy concerns or technical 
+ constraints related to communication and synchronization overheads. 
+% 
+Although decentralized approaches have been proposed as a viable alternative, they typically lead to 
+ suboptimal performance when compared to centralized counterparts, largely due to difficulties in maintaining global 
+ coordination and consistency.
+%
+Another critical challenge arises from the heterogeneous data distribution among agents.
+% 
+This heterogeneity is frequently influenced by the spatial distribution of the agents.
+%
+This builds on the assumption that devices in spatial proximity have similar experiences and make similar 
+ observations~\cite{esterle2022deep}, as
+ the phenomena to capture is intrinsically context dependent.
+
+\paragraph{Research plan.}
+This research is expected to involve:
+\begin{itemize}
+	\item Investigation of scalable transfer learning mechanisms for decentralized learning in many-agent systems;
+	\item Investigation of macroprogramming coordination strategies -- such as dynamic leader election -- for enhancing 
+	 transfer learning in decentralized many-agent scenarios, particularly where spatial proximity influences 
+	 data distribution and learning dynamics;
+	\item Integration of the above into simulated environments and evaluation on representative case studies 
+	 (e.g., traffic control, robotic coordination).
+\end{itemize}
+
+\bibliographystyle{unsrt}
+\bibliography{bibliography}
+
+\end{document}
