@@ -60,112 +60,87 @@
 
 \end{titlepage}
 
-\section{Proposal}\label{sec:intro}
+\section{The stay}
+During my research stay abroad, 
+ carried out at Trinity College Dublin (TCD) from September to December 2025, 
+ I collaborated with the Distributed Systems Group under the supervision of Prof. Ivana Dusparic.
+%
+The main objective of the stay was to advance joint research activities in the area 
+ of transfer learning for Multi-Agent Reinforcement Learning (MARL), 
+ with a particular focus on distributed and decentralized settings.
 
-\paragraph{Context.}
-Computing devices have become ubiquitous in everyday life.
-%
-This trend has paved the way for research fields aimed at exploiting
- the potential of device collectives to build next-generation systems, 
- including: collective computing~\cite{DBLP:journals/computer/Abowd16}
- and Collective Adaptive Systems (CAS)~\cite{DBLP:journals/sttt/WirsingJN23,robyphdthesis}.
-%
-More in detail, following Mitchell's definition~\cite{DBLP:conf/metacognition/Mitchell05}, 
- we refer to CAS as distributed systems comprising multiple agents 
- such that each agent:
- \begin{enumerate*}[label=(\roman*)]
-	\item can interact with other agents either directly or indirectly;
-	\item does not individually posses system-wide knowledge;
-	\item can exhibit learning to expand its personal knowledge; and
-	\item can make decisions based on collective or aggregated knowledge from some of its peers.
- \end{enumerate*}
-%
-Notably, we focus on systems involving a large number of agents -- potentially in the hundreds
- or thousands -- which is commonly referred to in the literature 
- as many-agents~\cite{DBLP:phd/ethos/Yang21a}.
-
-In this proposal, we focus on a particularly challenging problem within CAS: 
- enabling scalable decentralized machine learning across a large number of agents. 
+This period at TCD represented a valuable opportunity to align my PhD research with the expertise and 
+ ongoing work of the host group. 
 % 
-A key issue in this setting is how to reuse knowledge across agents operating in 
- heterogeneous and dynamic environments. 
-% 
-This motivates the exploration of transfer learning as a core strategy, 
- allowing agents to benefit from others' experiences while reducing redundant 
- learning and improving overall convergence.
+The collaboration was fully consistent with the objectives outlined in my period abroad proposal and 
+ enabled the exploration of new methodological perspectives, 
+ as well as the establishment of promising research synergies.
 
-\paragraph{Opportunities and challenges.}
-These systems enable the development of innovative applications in a wide range of real-world domains, such as: 
- smart cities~\cite{DBLP:conf/icse/IftikharRBW017}, 
- traffic control~\cite{DBLP:journals/tits/ChuWCL20,DBLP:books/sp/Muller2011/ProthmannTBHMS11} 
- with autonomous vehicles~\cite{DBLP:journals/corr/BojarskiTDFFGJM16}, 
- coordinated robot swarms for search and rescue~\cite{DBLP:journals/ijon/ZhouLLXS21} 
- or environmental monitoring~\cite{DBLP:conf/acsos/AguzziVE23}, and many more.
-%
-Nevertheless, while these systems have significant potential, their engineering 
- presents several challenges.
-%
-First and foremost, control and decision-making demand particular attention.
-%
-Achieving an optimal balance between centralized and decentralized control is crucial, 
- as neither extreme is feasible nor desirable~\cite{DBLP:conf/coordination/CasadeiPVN19,DBLP:journals/tits/ChuWCL20,DBLP:journals/jair/LyuBXDA23} 
- in many dynamic systems. 
-% 
-Indeed, excessive centralization may lead to bottlenecks and single points of failure, 
- whereas complete decentralization can hinder coordination and consistency.
-%
-Additionally, the dynamic nature of these systems, characterized by constant 
- environmental changes, mobility, and potential component failures, requires adaptive 
- learning mechanisms capable of responding swiftly 
- to evolving conditions~\cite{DBLP:journals/swarm/PrasetyoMF19}.
-%
-Another key consideration is the locality principle, where operational efficiency and cost 
- are heavily influenced by the spatial proximity of data sources, processing units, and users.
-%
-Furthermore, partial observability introduces uncertainty, as individual components may have 
- limited or incomplete information about the global state, complicating accurate 
- decision-making~\cite{DBLP:conf/uai/HeDB22}.
+\section{Research context and objectives}
+The research activity conducted during the stay was situated within the broader context 
+ of multi-agent systems and distributed learning, 
+ focusing on the role of transfer learning as a mechanism to improve scalability, stability, and 
+ learning efficiency in MARL scenarios characterized by heterogeneity and dynamic environments.
 
-Transfer learning could provide a principled way to share and reuse knowledge while respecting 
- local constraints. 
-%
-This opens up research questions around how to coordinate learning, 
- when and what to transfer, and how to ensure stability and efficiency in dynamic 
- multi-agent systems.
-
-\paragraph{Research Gap.}
-Despite significant progress in the field of cooperative learning within CAS, 
- several challenges remain open, indicating substantial research gaps.
-%
-Learning in environments with a high number of agents is often unstable and challenging to manage. 
-%
-Centralized learning architectures are frequently impractical, primarily due to privacy concerns or technical 
- constraints related to communication and synchronization overheads. 
+In particular, 
+ the goal was to investigate how knowledge transfer mechanisms can be effectively integrated 
+ into decentralized multi-agent learning architectures, 
+ enabling agents to reuse experience acquired by others while reducing redundant learning. 
 % 
-Although decentralized approaches have been proposed as a viable alternative, they typically lead to 
- suboptimal performance when compared to centralized counterparts, largely due to difficulties in maintaining global 
- coordination and consistency.
-%
-Another critical challenge arises from the heterogeneous data distribution among agents.
-% 
-This heterogeneity is frequently influenced by the spatial distribution of the agents.
-%
-This builds on the assumption that devices in spatial proximity have similar experiences and make similar 
- observations~\cite{esterle2022deep}, as
- the phenomena to capture is intrinsically context dependent.
+The interaction with the Distributed Systems Group also allowed these topics to be analyzed 
+ from a distributed systems perspective, highlighting connections between learning, coordination, 
+ and communication.
 
-\paragraph{Research plan.}
-This research is expected to involve:
+\section{Main activities}
+During my stay at Trinity College Dublin, I carried out the following main activities:
 \begin{itemize}
-	\item Investigation of scalable transfer learning mechanisms for decentralized learning in many-agent systems;
-	\item Investigation of macroprogramming coordination strategies -- such as dynamic leader election -- for enhancing 
-	 transfer learning in decentralized many-agent scenarios, particularly where spatial proximity influences 
-	 data distribution and learning dynamics;
-	\item Integration of the above into simulated environments and evaluation on representative case studies 
-	 (e.g., traffic control, robotic coordination).
+	\item regular research meetings with Prof. Ivana Dusparic and members of the Distributed Systems Group,
+	 aimed at discussing ideas, methodologies, and potential joint research directions;
+	\item in-depth study and analysis of the relevant literature on transfer learning and 
+	 multi-agent reinforcement learning, with particular emphasis on coordination and generalization 
+	 challenges;
+	\item initiation of preliminary experimental work exploring the intersection between 
+	 my PhD research topics and the research interests of the host group; 
+	 these experiments are currently still under development;
+	\item active participation in the academic life of the group through attendance at seminars and 
+	 research meetings.
 \end{itemize}
 
-\bibliographystyle{unsrt}
-\bibliography{bibliography}
+\section{Seminars and dissemination activities}
+In addition to research activities,
+ I was involved in several seminar-related initiatives. 
+%
+In particular, 
+ I delivered an internal seminar to the research group at TCD, 
+ presenting my PhD research topics and ongoing work. 
+% 
+This seminar fostered constructive discussion and provided valuable feedback from PhD students and 
+ researchers within the group.
+
+I also attended multiple seminars organized by the department, 
+ including a presentation by one of the group's PhD students on a paper recently published at ECAI, 
+ focused on Multi-Objective Reinforcement Learning (MORL). 
+% 
+These activities contributed to broadening my understanding of related research areas and 
+ strengthening scientific exchange within the host institution.
+
+\section{Ongoing and future work}
+Throughout the stay, 
+ several points of connection emerged between my PhD research and the work of 
+ the Distributed Systems Group. 
+% 
+In particular, 
+ we began exploring how transfer learning techniques could be combined with coordination mechanisms 
+ in distributed multi-agent systems.
+
+These discussions led to the development of initial experimental setups that are currently still ongoing. 
+%
+Although no finalized results are available yet, 
+ the work carried out during the stay has laid the foundations for a continued collaboration, 
+ which is expected to result in one or more joint publications in the coming months.
+
+
+%\bibliographystyle{unsrt}
+%\bibliography{bibliography}
 
 \end{document}
