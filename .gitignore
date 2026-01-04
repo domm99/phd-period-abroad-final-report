@@ -17,6 +17,6 @@ _minted*/
 *.vrb
 build/
 out/
-phd-period-abroad-proposal.fdb_latexmk
-phd-period-abroad-proposal.fls
-phd-period-abroad-proposal.pdf
+phd-period-abroad-final-report.fdb_latexmk
+phd-period-abroad-final-report.fls
+phd-period-abroad-final-report.pdf
